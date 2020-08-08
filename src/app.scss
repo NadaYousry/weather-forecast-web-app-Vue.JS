@@ -1,0 +1,56 @@
+@import "./assets/scss/variables";
+#app {
+    font-family: FranklinGothic;
+    font-weight: normal !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+#nav {
+    padding: 30px;
+
+    a {
+        color: #2c3e50;
+
+        &.router-link-exact-active {
+            color: #42b983;
+        }
+    }
+}
+.weather {
+    .weather-body {
+        &_forecast-days-header {
+            color: $light-green;
+            span {
+                color: $dark-green;
+            }
+        }
+        &_forecast-days-content {
+            &_card-img {
+            }
+            &_card-details {
+                color: $light-green;
+                .date {
+                    color: $dark-green;
+                }
+                &_image {
+                    position: relative;
+                }
+            }
+        }
+    }
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+.card {
+    box-shadow: $card-shadow;
+    border-radius: 32px;
+}
+.forecast-card {
+    box-shadow: $card-shadow;
+}

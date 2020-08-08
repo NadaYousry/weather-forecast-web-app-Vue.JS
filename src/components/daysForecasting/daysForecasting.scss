@@ -1,0 +1,27 @@
+@import "./../../assets/scss/variables";
+.weather-body {
+    &_forecast-days-header {
+        color: $light-green;
+        span {
+            color: $dark-green;
+        }
+    }
+    &_forecast-days-content {
+        &_card-details {
+            color: $light-green;
+            .date {
+                color: $dark-green;
+            }
+            &_image {
+                position: relative;
+            }
+        }
+    }
+}
+.card {
+    box-shadow: $card-shadow;
+    border-radius: 32px;
+}
+.forecast-card {
+    box-shadow: $card-shadow;
+}

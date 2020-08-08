@@ -1,0 +1,61 @@
+@import "../../assets/scss/variables";
+.weather-body_locations-temp {
+    &_top-content {
+        margin-top: -30%;
+    }
+    &_cards {
+        position: relative;
+        background-color: $white;
+    }
+    &_card-details {
+        &_image {
+            img {
+                width: 10%;
+            }
+        }
+        &_name {
+            &_degree {
+                color: $light-green;
+            }
+            &_wind {
+                font-size: 12px;
+                color: $gray;
+            }
+        }
+    }
+    &_card-img {
+        position: relative;
+        bottom: 23px;
+
+        &_icon {
+            position: absolute;
+            top: 30%;
+            left: 53%;
+            transform: translate(-50%);
+            box-shadow: $icon-shadow;
+        }
+    }
+
+    &_bottom-content {
+        background-image: url("../../assets/images/Rectangle7.png");
+        background-color: transparent;
+        background-size: cover;
+        .card {
+            background-color: transparent;
+        }
+        h3 {
+            color: $white;
+        }
+        &_card-details {
+            padding: 15%;
+        }
+    }
+}
+
+.card {
+    box-shadow: $card-shadow;
+    border-radius: 32px;
+}
+.forecast-card {
+    box-shadow: $card-shadow;
+}

@@ -1,0 +1,81 @@
+@import "./../../assets/scss/variables";
+.main {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin-top: 15%;
+}
+#clock-body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 10px solid $clock-border;
+}
+#center,
+#seconds,
+#minutes,
+#hours {
+    position: absolute;
+    background-color: $clock-border;
+    backface-visibility: hidden;
+    outline: 1px solid transparent;
+}
+#center {
+    z-index: 4;
+    height: 3%;
+    width: 3%;
+    top: 50%;
+    margin-top: -1.5%;
+    left: 50%;
+    margin-left: -1.5%;
+    border-radius: 100%;
+    border: 3px solid $clock-border;
+}
+#seconds {
+    z-index: 1;
+    left: 50%;
+    margin-left: -0.3%;
+    bottom: 50%;
+    width: 0.6%;
+    height: 49%;
+    border-top-right-radius: 40%;
+    border-top-left-radius: 40%;
+    transform-origin: bottom;
+}
+#minutes {
+    z-index: 2;
+    left: 50%;
+    margin-left: -0.7%;
+    bottom: 50%;
+    width: 1.4%;
+    height: 47%;
+    border-top-right-radius: 40%;
+    border-top-left-radius: 40%;
+    transform-origin: bottom;
+}
+#hours {
+    z-index: 3;
+    left: 50%;
+    margin-left: -0.7%;
+    bottom: 50%;
+    width: 1.4%;
+    height: 36%;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    transform-origin: bottom;
+}
+.post-wrap {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    bottom: 0; /* vertical center */
+    left: 0;
+    right: 0; /* horizontal center */
+    overflow: hidden;
+    padding: 15px;
+}
