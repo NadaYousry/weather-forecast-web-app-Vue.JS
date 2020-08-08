@@ -1,81 +1,61 @@
 @import "./../../assets/scss/variables";
-.main {
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    margin-top: 15%;
-}
-#clock-body {
-    position: relative;
-    height: 100%;
-    width: 100%;
+.clock {
+    border:10px solid  $clock-border;
     border-radius: 50%;
-    border: 10px solid $clock-border;
+    color: #fff;
+    display: block;
+    height: 250px;
+    position: relative;
+    width: 250px;
+    margin: 5vh auto;
 }
-#center,
-#seconds,
-#minutes,
-#hours {
-    position: absolute;
-    background-color: $clock-border;
-    backface-visibility: hidden;
-    outline: 1px solid transparent;
+
+.hand {
+  border: 2px  solid $dark-green;
+  height: 40%;
+  left: 50%;
+  margin-top: -40%;
+//   margin-left: -1vh;
+  position: absolute;
+  top: 50%;
+  transform-origin: 50% 100%;
+  width: 0;
+  transform: rotate(0deg);
 }
-#center {
-    z-index: 4;
-    height: 3%;
-    width: 3%;
-    top: 50%;
-    margin-top: -1.5%;
-    left: 50%;
-    margin-left: -1.5%;
-    border-radius: 100%;
-    border: 3px solid $clock-border;
+
+.hour {
+  height: 30%;
+  margin-top: -30%;
+  border-color:$dark-green;
 }
-#seconds {
-    z-index: 1;
-    left: 50%;
-    margin-left: -0.3%;
-    bottom: 50%;
-    width: 0.6%;
-    height: 49%;
-    border-top-right-radius: 40%;
-    border-top-left-radius: 40%;
-    transform-origin: bottom;
+
+.second {
+  border-width: 1px;
+  margin-left: -.5vh;
+  border-color:$dark-green;
 }
-#minutes {
-    z-index: 2;
-    left: 50%;
-    margin-left: -0.7%;
-    bottom: 50%;
-    width: 1.4%;
-    height: 47%;
-    border-top-right-radius: 40%;
-    border-top-left-radius: 40%;
-    transform-origin: bottom;
+
+.clock:after {
+//box-shadow: 0 1vh 1vh rgba(0,0,0,0.3);
+  content: '';
+  display: block;
+  height: 15px;
+  width: 15px ;
+  border-radius: 50%;
+  background: $white;
+  box-shadow:$icon-shadow;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
-#hours {
-    z-index: 3;
-    left: 50%;
-    margin-left: -0.7%;
-    bottom: 50%;
-    width: 1.4%;
-    height: 36%;
-    border-top-right-radius: 50%;
-    border-top-left-radius: 50%;
-    transform-origin: bottom;
-}
-.post-wrap {
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
-    position: absolute;
-    top: 0;
-    bottom: 0; /* vertical center */
-    left: 0;
-    right: 0; /* horizontal center */
-    overflow: hidden;
-    padding: 15px;
+
+.number {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  padding-top: .5em;
+  text-align: center;
+  width: 2em;
+  margin-left: -1em;
 }
