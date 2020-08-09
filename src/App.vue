@@ -1,11 +1,11 @@
 <template>
   <div id="app" class="weather">
     <div class="container m-auto mt-5">
-      <headerComponent :lng="lng" :lat="lat"/>
+      <headerComponent :lng="lng" :lat="lat" />
       <main class="weather-body pt-3 w-5/6 m-auto">
         <div class="grid grid-cols-3 gap-4">
           <div class>
-            <daysForecasting />
+            <daysForecasting :lng="lng" :lat="lat" />
           </div>
 
           <!--start clock-->
@@ -45,9 +45,8 @@ export default {
 
   data() {
     return {
-        lng: 0,
-        lat: 0,
-      
+      lng: 0,
+      lat: 0
     };
   },
   created() {
