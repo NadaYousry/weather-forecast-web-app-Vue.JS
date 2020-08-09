@@ -26,6 +26,7 @@
               {{temp.current}}
               <sup>o</sup>
             </h2>
+
             <p class="text-left">{{dateToday}}</p>
             <p class="text-left">{{timestamp}}</p>
           </div>
