@@ -1,5 +1,5 @@
 <template>
-  <header class="weather-header h-screen p-10">
+  <header class="weather-header p-10">
     <div class="rounded">
       <nav class="weather-header_navbar">
         <div class="weather-header_navbar_country flex">

@@ -5,9 +5,10 @@ import store from "./store";
 import "@/assets/css/index.css";
 import clockComponent from "@/components/clock/clockComponent";
 import VueGeolocation from "vue-browser-geolocation";
-
+import axios from "axios";
 Vue.config.productionTip = false;
 Vue.use(VueGeolocation);
+Vue.prototype.$http = axios;
 
 new Vue({
     router,

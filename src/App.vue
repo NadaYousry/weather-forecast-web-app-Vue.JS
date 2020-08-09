@@ -21,7 +21,7 @@
       </main>
     </div>
     <div>
-      <p>{{lat}} Lattide ,{{lng}} longitude</p>
+      <!--  <p>{{lat}} Lattide ,{{lng}} longitude</p>-->
     </div>
   </div>
 </template>

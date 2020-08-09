@@ -105,7 +105,6 @@ export default {
               this.threeDaysForecasting[i].max = json[i].temp[1].max.value;
               this.threeDaysForecasting[i].weatherCode =
                 json[i].temp[1].max.weather_code;
-
               let date = json[i].observation_time.value;
               let day = date.split("-")[2];
               let month = date.split("-")[1].slice(1);
