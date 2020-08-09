@@ -4,8 +4,10 @@ import router from "./router";
 import store from "./store";
 import "@/assets/css/index.css";
 import clockComponent from "@/components/clock/clockComponent";
+import VueGeolocation from "vue-browser-geolocation";
 
 Vue.config.productionTip = false;
+Vue.use(VueGeolocation);
 
 new Vue({
     router,

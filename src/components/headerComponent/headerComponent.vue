@@ -28,7 +28,7 @@
                 >
                     <div class="weather-header_temp_details_text">
                         <h2 class="text-4xl text-white  text-left">
-                            33 <sup>o</sup>
+                            {{temp.current}} <sup>o</sup>
                         </h2>
                         <p class=" text-left">{{dateToday}}</p>
                         <p class=" text-left">{{timestamp}}</p>
@@ -61,11 +61,20 @@ export default {
             location:'',
             description :'',
             timestamp: "",
-            dateToday:""
-        }
+            dateToday:"",
+            temp:{
+                min:0,
+                max:0,
+                current:0
+            }
+        };
     },
+    props:['lng','lat'],
     created() {
         setInterval(this.getNow, 1000);
+        console.log(this.lat , this.lng)
+    this.reverseGeocodingWithGoogle();
+    // this.getCurrentCountry();
     },
     methods: {
         getNow: function() {
@@ -78,11 +87,47 @@ export default {
             // hour = (hour)
             // minute = (minute)
             let time = hour + ":" + minute;
-            this.timestamp = time +" "+ prepend;
+            this.timestamp = "0"+time +" "+ prepend;
             let month =today.getMonth();
             let months = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
             this.dateToday = months[month] +" , "+today.getDate();
-        }
+        },
+        
+    reverseGeocodingWithGoogle() {
+        setTimeout(()=>{
+let url = new URL("https://api.climacell.co/v3/weather/forecast/daily");
+        let params = [
+    ["lat", this.lat],
+    ["lon", this.lng],
+    ["fields", "temp,humidity,wind_speed,weather_code"],
+    ["unit_system", "si"],
+    ["apikey", "Fzv4gnqA7m6bmQlmlgZD2IU200DYwY03"],
+  ];
+    url.search = new URLSearchParams(params).toString();
+ fetch(url)
+    .then((response) => response.json())
+    .then((json) => {
+        console.log(json)
+        console.log(url)
+            console.log(json[1])
+            this.temp.min = json[1].temp[0].min
+            this.temp.max = json[1].temp[0].max
+            this.temp.current =  json[0].temp[0].min.value
+        });
+
+        },1000)
+        },
+    //   getCurrentCountry(){
+    //       fetch('https://geolocation-db.com/jsonp/')
+    // .then((response) => {
+    //     response.json()
+    //     console.log(response)
+    //     })
+        
+
+
+    //   }
+  
     }
 };
 </script>
