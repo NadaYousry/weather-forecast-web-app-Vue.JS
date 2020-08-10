@@ -94,14 +94,12 @@ export default {
   },
   methods: {
     getNow: function() {
+      // calculate current time
       const today = new Date();
-      // const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
       let hour = today.getHours();
       let minute = today.getMinutes();
       let prepend = hour >= 12 ? "PM" : "AM";
       hour = hour > 12 ? hour - 12 : hour;
-      // hour = (hour)
-      // minute = (minute)
       let time = hour + ":" + minute;
       this.timestamp = "0" + time + " " + prepend;
       let month = today.getMonth();
@@ -132,28 +130,17 @@ export default {
           ["unit_system", "si"],
           ["apikey", "Fzv4gnqA7m6bmQlmlgZD2IU200DYwY03"]
         ];
+        // get data from weather api
         url.search = new URLSearchParams(params).toString();
-        fetch(url)
-          .then(response => response.json())
-          .then(json => {
-            console.log(json);
-            console.log(url);
-            console.log(json[0]);
-            this.temp.min = json[0].temp[0].min;
-            this.temp.max = json[0].temp[0].max;
-            this.temp.current = json[0].temp[0].min.value;
-            for (let i = 0; i <= 2; i++) {
-              console.log(this.threeDaysForecasting[i].max);
-              console.log(json[i].temp[0].min.value);
-              //   setTimeout(() => {
-              //   }, 1000);
-
-              this.threeDaysForecasting[i].min = json[i].temp[0].min.value;
-              this.threeDaysForecasting[i].max = json[i].temp[1].max.value;
-            }
-
-            console.log(this.threeDaysForecasting);
-          });
+        this.$http.get(url).then(res => {
+          this.temp.min = res.data[0].temp[0].min;
+          this.temp.max = res.data[0].temp[0].max;
+          this.temp.current = res.data[0].temp[0].min.value;
+          for (let i = 0; i <= 2; i++) {
+            this.threeDaysForecasting[i].min = res.data[i].temp[0].min.value;
+            this.threeDaysForecasting[i].max = res.data[i].temp[1].max.value;
+          }
+        });
       }, 1000);
     },
     onLogOut() {

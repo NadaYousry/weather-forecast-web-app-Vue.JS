@@ -98,43 +98,41 @@ export default {
           ["apikey", "Fzv4gnqA7m6bmQlmlgZD2IU200DYwY03"]
         ];
         url.search = new URLSearchParams(params).toString();
-        fetch(url)
-          .then(response => response.json())
-          .then(json => {
-            for (let i = 0; i <= 2; i++) {
-              console.log(this.threeDaysForecasting[i].max);
-              console.log(json[i].temp[0].min.value);
+        this.$http.get(url).then(res => {
+          for (let i = 0; i <= 2; i++) {
+            console.log(this.threeDaysForecasting[i].max);
+            console.log(res.data[i].temp[0].min.value);
 
-              this.threeDaysForecasting[i].min = json[i].temp[0].min.value;
-              this.threeDaysForecasting[i].max = json[i].temp[1].max.value;
-              this.threeDaysForecasting[i].weatherCode =
-                json[i].temp[1].max.weather_code;
-              let date = json[i].observation_time.value;
-              let day = date.split("-")[2];
-              let month = date.split("-")[1].slice(1);
-              let months = [
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December"
-              ];
-              console.log(date);
-              console.log(day);
-              console.log(month);
-              this.threeDaysForecasting[i].observationDate =
-                months[month] + " , " + day;
-              console.log(this.observationDate);
-            }
-            console.log(this.threeDaysForecasting);
-          });
+            this.threeDaysForecasting[i].min = res.data[i].temp[0].min.value;
+            this.threeDaysForecasting[i].max = res.data[i].temp[1].max.value;
+            this.threeDaysForecasting[i].weatherCode =
+              res.data[i].temp[1].max.weather_code;
+            let date = res.data[i].observation_time.value;
+            let day = date.split("-")[2];
+            let month = date.split("-")[1].slice(1);
+            let months = [
+              "January",
+              "February",
+              "March",
+              "April",
+              "May",
+              "June",
+              "July",
+              "August",
+              "September",
+              "October",
+              "November",
+              "December"
+            ];
+            console.log(date);
+            console.log(day);
+            console.log(month);
+            this.threeDaysForecasting[i].observationDate =
+              months[month] + " , " + day;
+            console.log(this.observationDate);
+          }
+          console.log(this.threeDaysForecasting);
+        });
       }, 1000);
     }
   }
