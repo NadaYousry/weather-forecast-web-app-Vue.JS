@@ -3,7 +3,7 @@
     <div class="login flex flex-col items-center justify-center p-10">
       <div class="login_form-body p-5 container">
         <div class="login_form-body_header">
-          <h3 class="text-5xl p-3 capitalize">Log in</h3>
+          <h3 class="p-3 capitalize md:text-4xl lg:text-5xl text-3xl">Log in</h3>
           <p>
             welcome to
             <span>weather web app</span>

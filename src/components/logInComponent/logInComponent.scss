@@ -15,16 +15,10 @@
             }
         }
     }
-    // position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    // background: linear-gradient(
-    //     236deg,
-    //     rgba(46, 76, 112, 1) 0%,
-    //     rgba(23, 33, 53, 1) 100%
-    // );
     background-image: url("./../../assets/images/wildlife-landscape-illustration-wallpaper-preview.jpg");
     background-size: cover;
     position: fixed;
@@ -67,12 +61,6 @@
                     position: relative;
                     margin-bottom: 3%;
                     margin-top: 3%;
-                    label {
-                        position: absolute;
-                        top: 40%;
-                        font-size: 12px;
-                        text-transform: capitalize;
-                    }
                     input {
                         width: 80%;
                         border-bottom: 2px solid $gray;
@@ -91,5 +79,39 @@
     ::placeholder {
         font-size: 12px;
         text-transform: capitalize;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .login {
+        &_form-body {
+            width: 70%;
+        }
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .login {
+        &_form-body {
+            width: 90%;
+            input {
+                width: 100%;
+            }
+            &_header {
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+        &_btn {
+            width: 90%;
+        }
+    }
+}
+@media only screen and (max-width: 375px) {
+    .login {
+        &_form-body {
+            width: 95%;
+        }
     }
 }
