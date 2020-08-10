@@ -3,6 +3,7 @@
 .login {
     &_btn {
         background-color: $light-green;
+        width: 80%;
         transition: all 0.2s ease-in-out;
         &:hover {
             background-color: $dark-green;
@@ -20,6 +21,18 @@
     // );
     background-image: url("./../../assets/images/wildlife-landscape-illustration-wallpaper-preview.jpg");
     background-size: cover;
+    position: relative;
+    z-index: 0;
+    &::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
     &_header {
         width: 100%;
         display: flex;
@@ -27,9 +40,12 @@
         justify-content: center;
     }
     &_form-body {
-        width: 50%;
+        width: 45%;
+        position: relative;
+        z-index: 100;
         // border-radius: 25px;
         background-color: $white;
+        box-shadow: $card-shadow;
         &_header {
             p {
                 color: $dark-green;
@@ -43,9 +59,11 @@
             &_form {
                 &_container {
                     position: relative;
+                    margin-bottom: 3%;
+                    margin-top: 3%;
                     label {
                         position: absolute;
-                        top: 50%;
+                        top: 40%;
                         font-size: 12px;
                         text-transform: capitalize;
                     }
