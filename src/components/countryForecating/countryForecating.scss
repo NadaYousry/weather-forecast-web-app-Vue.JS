@@ -119,6 +119,18 @@
         font-size: 12px;
         text-transform: capitalize;
     }
+    .add-btn {
+        background-color: $light-green;
+        &:hover {
+            background-color: $dark-green;
+        }
+        &:disabled {
+            background-color: #3accb378;
+            &:hover {
+                background-color: #3accb378;
+            }
+        }
+    }
 }
 
 // scroll style

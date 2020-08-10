@@ -93,8 +93,9 @@
           </div>
           <div class="popup_form-body_footer text-right">
             <button
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2"
+              class="text-white font-bold py-2 px-4 rounded m-2 add-btn"
               @click="onSubmitLocation()"
+              :disabled="locationData.longitude==='' || locationData.latitude==='' || locationData.city===''"
             >Add</button>
             <button
               @click="closePopup()"
