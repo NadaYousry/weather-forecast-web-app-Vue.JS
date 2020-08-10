@@ -4,6 +4,7 @@
       <nav class="weather-header_navbar">
         <div class="weather-header_logout-btn m-0 p-0">
           <button
+            @click="onLogOut()"
             class="md:text-sm lg:text-sm text-sm py-2 px-4 rounded m-2 login_btn ml-auto"
           >Log Out</button>
         </div>
@@ -154,6 +155,13 @@ export default {
             console.log(this.threeDaysForecasting);
           });
       }, 1000);
+    },
+    onLogOut() {
+      // change router if there is a token in cookies
+      if (document.cookie !== "") {
+        document.cookie = "access_token=" + "";
+        window.location.pathname = "/";
+      }
     }
   }
 };
