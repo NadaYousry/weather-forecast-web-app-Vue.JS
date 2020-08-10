@@ -15,7 +15,7 @@
           <div
             class="weather-header_navbar_country_name text-left pl-5 md:text-4xl lg:text-6xl text-3xl"
           >
-            <p>Egypt</p>
+            <p>{{location}}</p>
           </div>
         </div>
         <div class="weather-header_navbar_degree flex justify-end">
@@ -90,7 +90,7 @@ export default {
     setInterval(this.getNow, 1000);
     console.log(this.lat, this.lng);
     this.reverseGeocodingWithGoogle();
-    // this.getCurrentCountry();
+    this.displayCurrentCountry();
   },
   methods: {
     getNow: function() {
@@ -149,6 +149,14 @@ export default {
         document.cookie = "access_token=" + "";
         window.location.pathname = "/";
       }
+    },
+
+    displayCurrentCountry() {
+      // api to show country instade of google goelocation
+      this.$http.get("https://freegeoip.app/json/").then(res => {
+        console.log(res);
+        this.location = res.data.country_name;
+      });
     }
   }
 };
