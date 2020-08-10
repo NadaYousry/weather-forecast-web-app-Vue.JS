@@ -1,29 +1,10 @@
 <template>
   <div id="app" class="weather">
-    <div class="container m-auto mt-5 md:p-6 p-3">
-      <headerComponent :lng="lng" :lat="lat" />
-      <main class="weather-body pt-3 w-5/6 m-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
-          <div class>
-            <daysForecasting :lng="lng" :lat="lat" />
-          </div>
-
-          <!--start clock-->
-          <div class="weather-body_clock md:mb-10 lg:mb-0 mb-10">
-            <clockComponent />
-          </div>
-
-          <!-- start third column country weather-->
-          <div class="weather-body_locations-temp">
-            <countryForecating />
-          </div>
-        </div>
-      </main>
-    </div>
     <div>
       <!--  <p>{{lat}} Lattide ,{{lng}} longitude</p>-->
     </div>
-    <logInComponent />
+
+    <router-view />
   </div>
 </template>
 
@@ -31,34 +12,11 @@
 @import "./app";
 </style>
 <script>
-import clockComponent from "./components/clock/clockComponent";
-import countryForecating from "./components/countryForecating/countryForecating";
-import headerComponent from "./components/headerComponent/headerComponent";
-import daysForecasting from "./components/daysForecasting/daysForecasting";
-import logInComponent from "./components/logInComponent/logInComponent";
+// import logInComponent from "./components/logInComponent/logInComponent";
 export default {
   name: "app",
   components: {
-    clockComponent,
-    countryForecating,
-    headerComponent,
-    daysForecasting,
-    logInComponent
-  },
-
-  data() {
-    return {
-      lng: 0,
-      lat: 0
-    };
-  },
-  created() {
-    //   get user location
-    this.$getLocation({}).then(coordinates => {
-      this.lat = coordinates.lat;
-      this.lng = coordinates.lng;
-    });
-  },
-  methods: {}
+    // logInComponent
+  }
 };
 </script>

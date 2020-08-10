@@ -1,7 +1,12 @@
 <template>
-  <header class="weather-header p-10">
+  <header class="weather-header p-8">
     <div class="rounded">
       <nav class="weather-header_navbar">
+        <div class="weather-header_logout-btn m-0 p-0">
+          <button
+            class="md:text-sm lg:text-sm text-sm py-2 px-4 rounded m-2 login_btn ml-auto"
+          >Log Out</button>
+        </div>
         <div class="weather-header_navbar_country flex">
           <div class="weather-header_navbar_country_img md:w-10 w-6">
             <img class src="../../assets/images/Group4.svg" alt="location icon" />
@@ -150,14 +155,6 @@ export default {
           });
       }, 1000);
     }
-    //   getCurrentCountry(){
-    //       fetch('https://geolocation-db.com/jsonp/')
-    // .then((response) => {
-    //     response.json()
-    //     console.log(response)
-    //     })
-
-    //   }
   }
 };
 </script>

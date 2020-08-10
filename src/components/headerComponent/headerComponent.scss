@@ -6,6 +6,7 @@
     height: 70vh;
     &_navbar {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         &_country {
             width: 50%;
@@ -52,6 +53,22 @@
                 p {
                     color: $off-white;
                 }
+            }
+        }
+    }
+    &_logout-btn {
+        width: 100%;
+        button {
+            display: block;
+            color: $dark-green;
+            text-align: right;
+            transition: 0.2s all ease-in-out;
+            box-shadow: $card-shadow;
+            border: 2px solid $dark-green;
+            &:hover {
+                display: block;
+                color: $white;
+                background-color: $dark-green;
             }
         }
     }
