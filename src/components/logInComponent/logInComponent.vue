@@ -28,11 +28,9 @@
               />
             </div>
             <div class="login_form-body_footer text-center">
-              <!-- <router-link to="/home">
-            <button
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2 login_btn"
-            >Log In</button>
-              </router-link>-->
+              <div class="error-login" v-if="!validForm">
+                <p>*please enter valid email and password</p>
+              </div>
 
               <button
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2 login_btn"
@@ -59,7 +57,7 @@ export default {
         email: "",
         password: ""
       },
-
+      validForm: true,
       currentRoute: window.location.pathname
     };
   },
@@ -78,20 +76,27 @@ export default {
       };
       console.log(formData);
       // send user data to get token
-      this.$http.post(url, formData).then(result => {
-        console.log(result);
-        // store token in cookies
-        let tokencookie = document.cookie;
-        console.log(tokencookie);
-        let tokenFromReponse = result.data.data.access_token;
+      this.$http.post(url, formData).then(
+        result => {
+          console.log(result);
+          // store token in cookies
+          let tokencookie = document.cookie;
+          console.log(tokencookie);
+          let tokenFromReponse = result.data.data.access_token;
 
-        document.cookie = "access_token=" + tokenFromReponse;
-        // change router if there is a token in cookies
-        if (document.cookie !== "") {
-          console.log(this.currentRoute);
-          window.location.pathname = "/home";
+          document.cookie = "access_token=" + tokenFromReponse;
+          // change router if there is a token in cookies
+          if (document.cookie !== "") {
+            console.log(this.currentRoute);
+            window.location.pathname = "/home";
+          }
+        },
+        err => {
+          console.log("Err", err);
+          // handel error message request
+          this.validForm = false;
         }
-      });
+      );
     }
   }
 };
