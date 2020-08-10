@@ -24,7 +24,7 @@
       <section class="weather-header_temp">
         <div class="weather-header_temp_details w-1/5 flex p-5 rounded-r-full items-center">
           <div class="weather-header_temp_details_text">
-            <h2 class="text-xl md:text-xl lg:text-4xl text-white text-left">
+            <h2 class="text-xl md:text-xl lg:text-3xl text-white text-left">
               {{temp.current}}
               <sup>o</sup>
             </h2>

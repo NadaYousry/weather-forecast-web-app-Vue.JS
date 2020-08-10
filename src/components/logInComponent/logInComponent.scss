@@ -1,0 +1,71 @@
+@import "./../../assets/scss/variables";
+
+.login {
+    &_btn {
+        background-color: $light-green;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+            background-color: $dark-green;
+        }
+    }
+    // position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    // background: linear-gradient(
+    //     236deg,
+    //     rgba(46, 76, 112, 1) 0%,
+    //     rgba(23, 33, 53, 1) 100%
+    // );
+    background-image: url("./../../assets/images/wildlife-landscape-illustration-wallpaper-preview.jpg");
+    background-size: cover;
+    &_header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &_form-body {
+        width: 50%;
+        // border-radius: 25px;
+        background-color: $white;
+        &_header {
+            p {
+                color: $dark-green;
+                text-transform: capitalize;
+                span {
+                    color: $light-green;
+                }
+            }
+        }
+        &_content {
+            &_form {
+                &_container {
+                    position: relative;
+                    label {
+                        position: absolute;
+                        top: 50%;
+                        font-size: 12px;
+                        text-transform: capitalize;
+                    }
+                    input {
+                        width: 80%;
+                        border-bottom: 2px solid $gray;
+                        transition: all 0.2s ease-in-out;
+                        box-sizing: border-box;
+                        &:focus {
+                            outline: none;
+                            border: none;
+                            border-bottom: 2px solid $light-green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ::placeholder {
+        font-size: 12px;
+        text-transform: capitalize;
+    }
+}

@@ -23,6 +23,7 @@
     <div>
       <!--  <p>{{lat}} Lattide ,{{lng}} longitude</p>-->
     </div>
+    <logInComponent />
   </div>
 </template>
 
@@ -34,13 +35,15 @@ import clockComponent from "./components/clock/clockComponent";
 import countryForecating from "./components/countryForecating/countryForecating";
 import headerComponent from "./components/headerComponent/headerComponent";
 import daysForecasting from "./components/daysForecasting/daysForecasting";
+import logInComponent from "./components/logInComponent/logInComponent";
 export default {
   name: "app",
   components: {
     clockComponent,
     countryForecating,
     headerComponent,
-    daysForecasting
+    daysForecasting,
+    logInComponent
   },
 
   data() {
