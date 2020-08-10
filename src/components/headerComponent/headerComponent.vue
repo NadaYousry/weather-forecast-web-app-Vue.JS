@@ -3,16 +3,18 @@
     <div class="rounded">
       <nav class="weather-header_navbar">
         <div class="weather-header_navbar_country flex">
-          <div class="weather-header_navbar_country_img flex-5">
+          <div class="weather-header_navbar_country_img md:w-10 w-6">
             <img class src="../../assets/images/Group4.svg" alt="location icon" />
           </div>
-          <div class="weather-header_navbar_country_name text-left pl-5 flex2">
+          <div
+            class="weather-header_navbar_country_name text-left pl-5 md:text-4xl lg:text-6xl text-3xl"
+          >
             <p>Egypt</p>
           </div>
         </div>
         <div class="weather-header_navbar_degree flex justify-end">
           <p>F</p>
-          <span style="font-size:45px">|</span>
+          <span class="weather-header_navbar_degree_span">|</span>
           <p class="active">
             C
             <sup>o</sup>
@@ -22,7 +24,7 @@
       <section class="weather-header_temp">
         <div class="weather-header_temp_details w-1/5 flex p-5 rounded-r-full items-center">
           <div class="weather-header_temp_details_text">
-            <h2 class="text-4xl text-white text-left">
+            <h2 class="text-xl md:text-xl lg:text-4xl text-white text-left">
               {{temp.current}}
               <sup>o</sup>
             </h2>

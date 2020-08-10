@@ -1,15 +1,15 @@
 <template>
   <div id="app" class="weather">
-    <div class="container m-auto mt-5">
+    <div class="container m-auto mt-5 md:p-6 p-3">
       <headerComponent :lng="lng" :lat="lat" />
       <main class="weather-body pt-3 w-5/6 m-auto">
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
           <div class>
             <daysForecasting :lng="lng" :lat="lat" />
           </div>
 
           <!--start clock-->
-          <div class="weather-body_clock">
+          <div class="weather-body_clock md:mb-10 lg:mb-0 mb-10">
             <clockComponent />
           </div>
 

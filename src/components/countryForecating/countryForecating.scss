@@ -139,3 +139,42 @@
     border-radius: 5px;
     background-color: #cecece;
 }
+
+// responsive
+
+@media only screen and (max-width: 1025px) {
+    .weather-body_locations-temp {
+        &_top-content {
+            margin-top: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .weather-body_locations-temp {
+        &_top-content {
+            margin-top: 0;
+        }
+        .weather-body_locations-temp_card-img {
+            left: 25%;
+        }
+    }
+    .popup_form-body {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .popup_form-body {
+        width: 90%;
+    }
+
+    .weather-body_locations-temp_card-img {
+        left: 0%;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .weather-body_locations-temp .weather-body_locations-temp_card-img {
+        left: 0;
+    }
+}

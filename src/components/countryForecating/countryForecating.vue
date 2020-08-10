@@ -3,19 +3,21 @@
     <div class="weather-body_locations-temp_top-content p-4" v-if="citiesCard.length >0">
       <div
         class="rounded-lg flex items-center card weather-body_locations-temp_cards mb-10"
-        v-for="city in citiesCard"
-        :key="city"
+        v-for="(city,index) in citiesCard"
+        :key="index"
       >
         <div
-          class="px-6 py-4 weather-body_locations-temp_card-details text-left text-4xl capitalize font-medium flex items-center"
+          class="px-6 py-4 weather-body_locations-temp_card-details text-left md:text-xl lg:text-4xl text-2xl capitalize capitalize font-medium flex items-center"
         >
-          <div class="weather-body_locations-temp_card-details_name text-left pl-2 w-60">
+          <div
+            class="weather-body_locations-temp_card-details_name text-left pl-2 w-60 md:text-xl lg:text-4xl text-2xl"
+          >
             <div class="flex weather-body_locations-temp_card-details_image">
               <img class src="../../assets/images/Group4.svg" alt="location icon" />
               <p class="text-2xl capitalize ml-2">{{city.city}}</p>
             </div>
             <p
-              class="weather-body_locations-temp_card-details_name_degree text-left text-4xl capitalize font-medium"
+              class="weather-body_locations-temp_card-details_name_degree text-left md:text-xl lg:text-4xl text-2xl capitalize capitalize font-medium"
             >
               {{city.temp}}
               <sup>o</sup>
@@ -50,7 +52,7 @@
     </div>
     <!--start bottom card-->
     <div
-      class="weather-body_locations-temp_bottom-content card px-2 flex items-center justify-center"
+      class="weather-body_locations-temp_bottom-content card px-4 flex items-center justify-center"
       @click="openPopup()"
     >
       <div class="rounded-lg card weather-body_locations-temp_cards">
@@ -123,7 +125,7 @@ export default {
     };
   },
   created() {
-    this.reverseGeocodingWithGoogle();
+    // this.reverseGeocodingWithGoogle();
     // this.getCurrentCountry();
   },
   methods: {

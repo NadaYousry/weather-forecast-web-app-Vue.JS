@@ -20,7 +20,7 @@
             &_name {
                 // width: 90%;
                 color: $dark-green;
-                font-size: 70px;
+                // font-size: 70px;
             }
         }
         &_degree {
@@ -30,6 +30,10 @@
                 color: $white;
                 text-shadow: 0px 3px 6px #00000029;
             }
+        }
+
+        &_navbar_degree_span {
+            font-size: 45px;
         }
     }
     &_temp {
@@ -41,6 +45,9 @@
             padding-right: 2% !important;
             position: relative;
             left: -7%;
+            &_icon {
+                box-shadow: $icon-shadow;
+            }
             &_text {
                 p {
                     color: $off-white;
@@ -63,4 +70,48 @@
     top: -28px;
     bottom: 100%;
     z-index: -2;
+}
+// responsive
+@media only screen and (max-width: 800px) {
+    .weather-header {
+        height: 70vh;
+        &_temp_details {
+            width: 35%;
+            padding: 2% !important;
+        }
+        .rotated {
+            left: -6% !important;
+            top: -35px;
+        }
+        &_navbar_degree {
+            font-size: 40px;
+        }
+
+        &_navbar_degree_span {
+            font-size: 35px;
+        }
+    }
+}
+// mobile
+@media only screen and (max-width: 430px) {
+    .weather-header {
+        height: 80vh;
+        &_temp_details {
+            width: 75%;
+            left: -40px;
+            margin-top: 13%;
+            padding: 3%;
+        }
+        .rotated {
+            left: -6% !important;
+            top: -35px;
+        }
+        &_navbar_degree {
+            font-size: 40px;
+        }
+
+        &_navbar_degree_span {
+            font-size: 35px;
+        }
+    }
 }

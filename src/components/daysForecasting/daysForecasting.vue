@@ -1,14 +1,18 @@
 <template>
   <div class>
     <div class="weather-body_forecast-days-header">
-      <h2 class="text-left text-4xl capitalize font-medium">
+      <h2 class="text-left md:text-2xl lg:text-4xl text-2xl capitalize font-medium">
         3 days
         <span>forecast</span>
       </h2>
     </div>
-    <div class="weather-body_forecast-days-content" v-for="day in threeDaysForecasting" :key="day">
+    <div
+      class="weather-body_forecast-days-content"
+      v-for="(day,index) in threeDaysForecasting"
+      :key="index"
+    >
       <div class="rounded-lg flex items-center forecast-card my-5 mb-10">
-        <div class="px-6 py-4 weather-body_forecast-days-content_card-img">
+        <div class="lg:px-6 md:px-2 px-2 py-4 weather-body_forecast-days-content_card-img">
           <img
             v-if="day.weatherCode ==='mostly_clear'"
             src="../../assets/images/rain.svg"
@@ -21,7 +25,7 @@
           />
         </div>
         <div
-          class="p-4 weather-body_forecast-days-content_card-details text-left text-3xl capitalize font-medium"
+          class="p-4 weather-body_forecast-days-content_card-details text-left md:text-sm lg:text-3xl text-sm capitalize font-medium"
         >
           <p class="inline-block">
             {{day.min}}
@@ -32,7 +36,7 @@
             {{day.max}}
             <sup>o</sup>
           </p>
-          <p class="text-lg date">
+          <p class="date md:text-sm lg:text-lg text-sm">
             {{day.observationDate}}
             <sup>st</sup>
           </p>
